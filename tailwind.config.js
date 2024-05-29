@@ -15,7 +15,9 @@ export default {
         "white": "#FFFFFF",
         "darkblue": "#546CFF",
         "edgeblue": "#0099BD",
-        "border": "#D9D9D9"
+        "border": "#D9D9D9",
+        "contact": "#D8DFE5",
+        "footer": "#3D3D3D"
 
       },
       backgroundImage:{

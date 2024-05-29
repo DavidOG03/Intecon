@@ -1,10 +1,11 @@
 import "./App.css";
+import Service from "./components/service";
 
 function App() {
   return (
     <>
       <header>
-        <nav className="flex justify-start items-center absolute top-0 left-[7%] w-full pt-[50px]">
+        <nav className="flex justify-start items-center absolute top-0 left-[7%] w-full pt-[50px] z-10">
           <a href="/">
             <img src="/images/intecon-logo.png" alt="intecon logo" />
           </a>
@@ -37,8 +38,8 @@ function App() {
           </ul>
         </nav>
       </header>
-      <main className="bg-blue  w-full">
-        <section className="hero pt-[255px] pl-[7%] relative h-[875px] overflow-hidden">
+      <main className="w-full">
+        <section className="hero pt-[255px] pl-[7%] relative h-[875px] overflow-hidden bg-blue">
           <div className="hero-text mb-[88px]">
             <span className="uppercase text-white font-normal text-[36px]">
               We are
@@ -84,7 +85,6 @@ function App() {
           />
         </section>
 
-
         <section className="about  bg-white w-full h-full relative overflow-hidden pb-[96px]">
           <div className="background w-[50%] h-[893px] bg-plan bg-cover bg-left-top bg-no-repeat absolute top-0 left-1"></div>
           <div className="background w-[50%] h-[893px] bg-plan-2 bg-cover bg-left-top bg-no-repeat absolute top-[112px] right-0"></div>
@@ -128,7 +128,7 @@ function App() {
             </div>
           </div>
 
-          <div className="profile grid grid-cols-2 relative z-10 w-full bg-white py-[84px] px-[7%]">
+          <div className="profile grid grid-cols-2 relative z-10 w-full bg-white py-[84px] px-[7%] gap-x-[5%]">
             <div className="image-box flex flex-col justify-start items-center">
               <div className="image bg-border rounded-[10px] max-w-[505px]">
                 <img
@@ -173,12 +173,206 @@ function App() {
               </p>
             </div>
           </div>
+          <div className="blue-box w-[34px] h-[142px] bg-edgeblue absolute bottom-6 right-0 z-20"></div>
         </section>
 
-        <section className="projects">
+        <section className="projects relative pt-[184px] pb-[139px] px-[230px]">
+          <div className="blue-box w-[34px] h-[142px] bg-edgeblue absolute top-[145px] left-0"></div>
+          <h3 className="text-[40px] tracking-[14.8px] font-bold font-inter uppercase">
+            Projects
+          </h3>
+          <img
+            src="/images/ajayi-crowther-library.png"
+            alt="ajayi crowther library"
+            className="first-project"
+          />
+          <img
+            src="/images/bowen-library.png"
+            alt="bowen library"
+            className="second-project"
+          />
+          <img
+            src="/images/natural-science-building.png"
+            alt="Ajayi Crowther natural science building"
+            className="third-project"
+          />
+          <img
+            src="/images/heritage-mall.png"
+            alt="Heritage Mall Dugbe, Ibadan, Oyo State Nigeria"
+            className="fourth-project"
+          />
+          <img
+            src="/images/engr-survey.png"
+            alt="Engineering Survey"
+            className="fifth-project"
+          />
+          <img
+            src="/images/eket-control-tower.png"
+            alt="Eket Control Tower"
+            className="sixth-project"
+          />
+          <button className="text-[24px] block font-normal font-jost bg-darkblue py-6 px-[42px] -tracking-[0.96px] rounded text-white mx-auto ">
+            See More Projects
+          </button>
+        </section>
 
+        <section className=" services relative pt-[140px] pb-[177px] px-[11%] bg-edgeblue">
+          <h3 className="text-[40px] absolute top-[140px] left-[164px] tracking-[14.8px] font-bold font-inter uppercase text-white">
+            Services
+          </h3>
+          <Service
+            head="Highway"
+            text="Intecon specializes in designing and constructing robust structures that withstand the test of time, from towering skyscrapers to intricate bridges, blending innovation with structural integrity."
+            img="/images/highway.png"
+          />
+          <Service
+            head="Structure"
+            text="Intecon specializes in designing and constructing robust structures that withstand the test of time, from towering skyscrapers to intricate bridges, blending innovation with structural integrity."
+            img="/images/structure.png"
+          />
+          <Service
+            head="Geotechnic"
+            text="Intecon's geotechnical expertise lies in understanding the Earth's complexities to ensure stable and sustainable construction, offering comprehensive solutions for soil mechanics, foundation design, and ground improvement."
+            img="/images/geotechnic.png"
+          />
+          <Service
+            head="Non-destructive 
+          testing"
+            text="With advanced non-destructive testing techniques, Intecon ensures the structural integrity and safety of infrastructure without causing damage, employing cutting-edge methods to assess material properties and detect flaws."
+            img="/images/testing.png"
+          />
+        </section>
+
+        <section className="clients py-[143px]">
+          <h3 className="text-[40px] tracking-[14.8px] font-bold font-inter uppercase text-center">
+            Our Client
+          </h3>
+          <div className="marquee-container">
+            <div className="marquee">
+              <span className="client">
+                <img
+                  src="/images/coat-of-arms.png"
+                  alt="Nigerian coat of arms no background"
+                />
+              </span>
+              <span className="client">
+                <img
+                  src="/images/exxon.png"
+                  alt="ExxonMobil logo png"
+                />
+              </span>
+              <span className="client">
+                <img
+                  src="/images/p-and-g.png"
+                  alt="Procter and gamble logo "
+                />
+              </span>
+              <span className="client">
+                <img
+                  src="/images/excellence-and-godliness.png"
+                  alt="Excellence and godliness logo"
+                />
+              </span>
+              <span className="client">
+                <img
+                  src="/images/coat-of-arms.png"
+                  alt="Nigerian coat of arms no background"
+                />
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <section className="contact bg-contact relative">
+          <div className="contact-head absolute -top-[110px] left-[124px] bg-contact rounded-[15px] py-8 px-[100px] ">
+            <p className="font-inter text-[32px] font-medium ">Contact</p>
+          </div>
+          <form
+            action=""
+            className="grid w-full max-w-[583px] m-auto pt-[88px] pb-[45px]"
+          >
+            <div className="grid grid-cols-2 gap-x-8 gap-y-8">
+              <div className="input-grp">
+                <label htmlFor="name"></label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Name"
+                  className="w-full py-[14px] px-[28px] rounded-[10px]"
+                  required
+                />
+              </div>
+
+              <div className="input-grp">
+                <label htmlFor="email"></label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Email Address"
+                  className="w-full py-[14px] px-[28px] rounded-[10px]"
+                  required
+                />
+              </div>
+
+              <textarea
+                name="message"
+                id="message"
+                cols="30"
+                rows="10"
+                placeholder="Message"
+                className="w-full py-[14px] px-[28px] h-[195px] col-span-full col-start-1 col-end-3 rounded-[10px]"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              className="text-[24px] block mx-auto font-normal font-jost bg-darkblue py-6 px-[42px] -tracking-[0.96px] rounded text-white mt-8"
+            >
+              Send Message
+            </button>
+          </form>
         </section>
       </main>
+
+      <footer className="pt-[178px] pb-[98px] px-[128.5px] bg-footer ">
+        <img
+          src="/images/intecon-logo-too.png"
+          alt="intecon pertnership logo"
+          className="block mx-auto mb-[42px]"
+        />
+        <p className="text-center text-white mb-[120px]">
+          <span className="font-bold font-inter text-[14px]">
+            InteconPartnershipLtd
+          </span>{" "}
+          ©️ 2024 | All Rights Reserved!
+        </p>
+        <div className="flex flex-row justify-between items-end">
+          <div className="contact-info">
+            <div className="contact-email flex flex-row justify-start items-center gap-[28px] mb-8">
+              <img src="/images/envelope.svg" alt="envelop icon" />
+              <a
+                href="mailto:intecon@intecon.com.ng"
+                className="text-white underline font-inter text-[18px]"
+              >
+                intecon@intecon.com.ng
+              </a>
+            </div>
+            <div className="contact-phone flex flex-row justify-start items-center gap-[28px]">
+              <img src="/images/phone-too.svg" alt="phone icon" />
+              <p className="text-white font-inter text-[18px]">
+                +234 803 324 2026, +234 803 328 3101
+              </p>
+            </div>
+          </div>
+          <div className="location flex flex-row justify-start items-center gap-[28px]">
+            <img src="/images/location.svg" alt="direction icon" />
+            <p className="text-white font-inter text-[18px]">
+              6 Aperin Street, Off Awolowo Road Old Bodija, Ibadan, Nigeria
+            </p>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }
