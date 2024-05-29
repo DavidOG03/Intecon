@@ -176,7 +176,7 @@ function App() {
           <div className="blue-box w-[34px] h-[142px] bg-edgeblue absolute bottom-6 right-0 z-20"></div>
         </section>
 
-        <section className="projects relative pt-[184px] pb-[139px] px-[230px]">
+        <section className="projects relative pt-[184px] pb-[139px] px-[230px] overflow-hidden">
           <div className="blue-box w-[34px] h-[142px] bg-edgeblue absolute top-[145px] left-0"></div>
           <h3 className="text-[40px] tracking-[14.8px] font-bold font-inter uppercase">
             Projects
@@ -216,7 +216,7 @@ function App() {
           </button>
         </section>
 
-        <section className=" services relative pt-[140px] pb-[177px] px-[11%] bg-edgeblue">
+        <section className=" services relative pt-[140px] pb-[177px] px-[11%] bg-edgeblue overflow-hidden">
           <h3 className="text-[40px] absolute top-[140px] left-[164px] tracking-[14.8px] font-bold font-inter uppercase text-white">
             Services
           </h3>
