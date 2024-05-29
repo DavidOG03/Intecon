@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        "jost" : [ '"Jost", sans-serif'],
+        "inter": [ '"Inter", sans-serif'],
+      },
       colors: {
         "blue":"#00BFEC",
         "white": "#FFFFFF",
@@ -16,6 +20,7 @@ export default {
       },
       backgroundImage:{
         "plan": 'url("/images/drawing-plan.png")',
+        "plan-2": 'url("/images/drawing-plan-2.png")',
         
       }
     },
