@@ -11,13 +11,13 @@
 body{
   width: 100%;
   height: 100vh;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 
 #root{
   width: 100%;
   height: 100%;
- 
+  overflow-x: hidden;
 }
 
 .circle{
@@ -46,6 +46,28 @@ body{
   height: 30px;
   background-color: #fff;
   border-radius: 50%;
-  box-shadow: -12px 12px 0 #D8DFE5;
-  
+  box-shadow: -12px 12px 0 #D8DFE5; 
+}
+
+.marquee::-webkit-scrollbar{
+  display: none;
+}
+
+.client{
+  width: 231px;
+  height: 231px;
+}
+
+.profile-image img{
+  transition: filter 0.5s ease;
+  filter: grayscale(100%)
+}
+
+.profile-image:hover{
+  cursor: pointer;
+}
+
+ 
+.profile-image:hover img{
+  filter: unset;
 }

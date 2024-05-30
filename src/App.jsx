@@ -4,34 +4,34 @@ import Service from "./components/service";
 function App() {
   return (
     <>
-      <header>
+      <header className="relative">
         <nav className="flex justify-start items-center absolute top-0 left-[7%] w-full pt-[50px] z-10">
           <a href="/">
             <img src="/images/intecon-logo.png" alt="intecon logo" />
           </a>
           <ul className="navlinks flex justify-start items-center gap-6">
             <li className="uppercase ">
-              <a href="/" className="no-underline text-white text-[14px]">
+              <a href="/" className="no-underline text-white text-[14px] font-inter hover:font-bold">
                 Home
               </a>
             </li>
             <li className="uppercase  ">
-              <a href="/" className="no-underline text-white text-[14px]">
+              <a href="/" className="no-underline text-white text-[14px] font-inter hover:font-bold">
                 About
               </a>
             </li>
             <li className="uppercase  ">
-              <a href="/" className="no-underline text-white text-[14px]">
+              <a href="/" className="no-underline text-white text-[14px] font-inter hover:font-bold">
                 Projects
               </a>
             </li>
             <li className="uppercase  ">
-              <a href="/" className="no-underline text-white text-[14px]">
+              <a href="/" className="no-underline text-white text-[14px] font-inter hover:font-bold">
                 Services
               </a>
             </li>
             <li className="uppercase  ">
-              <a href="/" className="no-underline text-white text-[14px]">
+              <a href="/" className="no-underline text-white text-[14px] font-inter hover:font-bold">
                 Contact
               </a>
             </li>
@@ -73,7 +73,7 @@ function App() {
                 Contact Us
               </span>
               <div className="phone-box absolute bottom-[10px] right-[10px] grid place-items-center bg-white rounded-full p-[5px]">
-                <img src="/images/Phone.svg" alt="phone icon" />
+                <img src="/images/phone.svg" alt="phone icon" />
               </div>
             </a>
           </div>
@@ -130,7 +130,7 @@ function App() {
 
           <div className="profile grid grid-cols-2 relative z-10 w-full bg-white py-[84px] px-[7%] gap-x-[5%]">
             <div className="image-box flex flex-col justify-start items-center">
-              <div className="image bg-border rounded-[10px] max-w-[505px]">
+              <div className="profile-image bg-border rounded-[10px] max-w-[505px]">
                 <img
                   src="/images/engr-ajibola.png"
                   alt="Intecon Engineer Ajibola's Profile Picture"
@@ -176,7 +176,7 @@ function App() {
           <div className="blue-box w-[34px] h-[142px] bg-edgeblue absolute bottom-6 right-0 z-20"></div>
         </section>
 
-        <section className="projects relative pt-[184px] pb-[139px] px-[230px] overflow-hidden">
+        <section className="projects relative pt-[184px] pb-[139px] px-[230px] overflow-hidden h-[2100px]">
           <div className="blue-box w-[34px] h-[142px] bg-edgeblue absolute top-[145px] left-0"></div>
           <h3 className="text-[40px] tracking-[14.8px] font-bold font-inter uppercase">
             Projects
@@ -184,36 +184,39 @@ function App() {
           <img
             src="/images/ajayi-crowther-library.png"
             alt="ajayi crowther library"
-            className="first-project"
+            className="first-project absolute top-[145px] right-[16%]"
           />
           <img
             src="/images/bowen-library.png"
             alt="bowen library"
-            className="second-project"
+            className="second-project absolute top-[470px] left-[16%]"
           />
           <img
             src="/images/natural-science-building.png"
             alt="Ajayi Crowther natural science building"
-            className="third-project"
+            className="third-project absolute top-[818px] right-[17%]"
           />
           <img
             src="/images/heritage-mall.png"
             alt="Heritage Mall Dugbe, Ibadan, Oyo State Nigeria"
-            className="fourth-project"
+            className="fourth-project absolute top-[818px] left-[16%]"
           />
           <img
             src="/images/engr-survey.png"
             alt="Engineering Survey"
-            className="fifth-project"
+            className="fifth-project absolute top-[1377px] left-[16%]"
           />
           <img
             src="/images/eket-control-tower.png"
             alt="Eket Control Tower"
-            className="sixth-project"
+            className="sixth-project absolute top-[1426px] right-[16%]"
           />
-          <button className="text-[24px] block font-normal font-jost bg-darkblue py-6 px-[42px] -tracking-[0.96px] rounded text-white mx-auto ">
+          <button className="text-[24px] block font-normal font-jost bg-darkblue py-6 px-[42px] -tracking-[0.96px] rounded text-white mx-auto mt-auto">
             See More Projects
           </button>
+
+          <img src="/images/intecon-thick.png" alt="intecon logo" className="w-full h-full absolute -left-[784px] -bottom[365px] -z-[1]"/>
+          <img src="/images/intecon-thick.png" alt="intecon logo"  className="w-full h-full absolute -right-[498px] -bottom-[1093px] -z-[1]"/>
         </section>
 
         <section className=" services relative pt-[140px] pb-[177px] px-[11%] bg-edgeblue overflow-hidden">
@@ -243,12 +246,12 @@ function App() {
           />
         </section>
 
-        <section className="clients py-[143px]">
+        <section className="clients py-[58px]">
           <h3 className="text-[40px] tracking-[14.8px] font-bold font-inter uppercase text-center">
-            Our Client
+            Our Clients
           </h3>
           <div className="marquee-container">
-            <div className="marquee">
+            <div className="marquee flex flex-row justify-between items-stretch gap-5 py-[88px] px-[100px] overflow-scroll ">
               <span className="client">
                 <img
                   src="/images/coat-of-arms.png"
@@ -275,8 +278,38 @@ function App() {
               </span>
               <span className="client">
                 <img
-                  src="/images/coat-of-arms.png"
-                  alt="Nigerian coat of arms no background"
+                  src="/images/unibadan-logo.png"
+                  alt="University of Ibadan logo"
+                />
+              </span>
+              <span className="client">
+                <img
+                  src="/images/oodua.png"
+                  alt="O'dua Investment company Limited"
+                />
+              </span>
+              <span className="client">
+                <img
+                  src="/images/updc.png"
+                  alt="updc logo"
+                />
+              </span>
+              <span className="client">
+                <img
+                  src="/images/ajayi-crowther-logo.png"
+                  alt="Ajayi Crowther University Logo"
+                />
+              </span>
+              <span className="client">
+                <img
+                  src="/images/faan.png"
+                  alt="FAAN Logo"
+                />
+              </span>
+              <span className="client">
+                <img
+                  src="/images/unilever.png"
+                  alt="Unilever Logo"
                 />
               </span>
             </div>
