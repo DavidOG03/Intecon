@@ -1,4 +1,5 @@
 import "./App.css";
+import Marquee from "react-fast-marquee";
 import Service from "./components/service";
 
 function App() {
@@ -246,13 +247,13 @@ function App() {
           />
         </section>
 
-        <section className="clients py-[58px]">
+        <section className="clients py-[69px]">
           <h3 className="text-[40px] tracking-[14.8px] font-bold font-inter uppercase text-center">
             Our Clients
           </h3>
-          <div className="marquee-container">
-            <div className="marquee flex flex-row justify-between items-stretch gap-5 py-[88px] px-[100px] overflow-scroll ">
-              <span className="client">
+          <div className="marquee-container relative -z-[1] pt-[88px] pb-[124px]">
+            <Marquee speed={250}>
+            <span className="client">
                 <img
                   src="/images/coat-of-arms.png"
                   alt="Nigerian coat of arms no background"
@@ -312,13 +313,13 @@ function App() {
                   alt="Unilever Logo"
                 />
               </span>
-            </div>
+            </Marquee>
           </div>
         </section>
 
         <section className="contact bg-contact relative">
           <div className="contact-head absolute -top-[110px] left-[124px] bg-contact rounded-[15px] py-8 px-[100px] ">
-            <p className="font-inter text-[32px] font-medium ">Contact</p>
+            <p className="font-inter text-[32px] font-medium ">Contact Us</p>
           </div>
           <form
             action=""
