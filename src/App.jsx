@@ -421,7 +421,7 @@ function App() {
               }}
               viewport={{ once: true }}
             >
-              <p className="text-[24px] font-jost font-light pb-6 ">
+              <p className="text-[24px] font-jost font-light pb-6  opacity-100 text-black">
                 INTECON PARTNERSHIP was established in 1976 by highly qualified
                 Nigerian professional engineers with local and international
                 experience to provide top quality consulting engineering
@@ -429,7 +429,7 @@ function App() {
                 a partnership has since grown into a limited liability company
                 with enhanced capacity for large scale projects.
               </p>
-              <p className="text-[24px] font-jost font-light pb-6">
+              <p className="text-[24px] font-jost font-light pb-6 opacity-100 text-black">
                 Over the years, INTECON has developed to become the leading
                 Nigerian consulting engineering firms, specializing in project
                 conceptualization, feasibility studies, pre-engineering studies
@@ -438,7 +438,7 @@ function App() {
                 Environmental and waste management, quality assurance/quality
                 control supervision and project management.
               </p>
-              <p className="text-[24px] font-jost font-light pb-6">
+              <p className="text-[24px] font-jost font-light pb-6 opacity-100 text-black">
                 Towards actualizing our dream of been a competitive global
                 player and an international firm, INTECON has built good
                 relationships with some foreign firms with capabilities in
