@@ -283,7 +283,7 @@ function App() {
           </div>
 
           <motion.div
-            className=" slider absolute bottom-[120px] -right-[438px] scale-[1.2] w-full h-full block z-1"
+            className=" slider absolute bottom-[80px] -right-[438px] flex items-end justify-center w-full h-full z-1"
             variants={fadeup}
             initial="hidden"
             whileInView="visible"
@@ -295,7 +295,7 @@ function App() {
                 src={slide.image}
                 alt={`Slide ${slide.id}`}
                 // style={{ display: index === currentSlide ? 'block' : 'none' }}
-                className={`carousel-slide ${
+                className={`carousel-slide scale-[1.05] ${
                   index === currentSlide ? "active" : ""
                 }`}
               />
