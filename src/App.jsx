@@ -3,23 +3,40 @@ import "./App.css";
 import Marquee from "react-fast-marquee";
 import { motion } from "framer-motion";
 import Service from "./components/service";
-import firstImage from '/images/hero-image-1.png'
-import secondImage from '/images/hero-image-2.png'
-import thirdImage from '/images/hero-image-3.png'
+import firstImage from "/images/hero-image-1.png";
+import secondImage from "/images/hero-image-2.png";
+import thirdImage from "/images/hero-image-3.png";
 
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentWord, setCurrentWord] = useState(0);
+  const [currentDesc, setCurrentDesc] = useState(0);
   const slides = [
     { id: 1, image: firstImage },
     { id: 2, image: secondImage },
-    { id: 3, image: thirdImage},
+    { id: 3, image: thirdImage },
+  ];
+
+  const words = [
+    { id: 1, content: "WE ARE" },
+    { id: 2, content: "BUILDING TOMORROW" },
+    { id: 3, content: "Engineering a Better World" },
+    // Add more slides here
+  ];
+
+  const descs = [
+    { id: 1, content: "Consulting Engineers" },
+    { id: 2, content: "Expert Engineering Solutions" },
+    { id: 3, content: "Innovating Construction and Design" },
     // Add more slides here
   ];
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-    }, 3000); // Change the interval time as needed
+      setCurrentWord((prevWord) => (prevWord + 1) % words.length);
+      setCurrentDesc((prevDesc) => (prevDesc + 1) % descs.length);
+    }, 4000); // Change the interval time as needed
 
     return () => clearInterval(intervalId);
   }, []);
@@ -196,15 +213,36 @@ function App() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <span className="uppercase text-white font-inter font-normal text-[36px]">
-              We are
-            </span>
+            <div className="words max-w-[599px] overflow-hidden">
+              {words.map((word, index) => (
+                <span
+                  key={word.id}
+                  style={{ display: index === currentWord ? "block" : "none" }}
+                  className={`carousel-word uppercase text-white font-inter font-normal text-[36px] ${
+                    index === currentWord ? "active" : ""
+                  }`}
+                >
+                  {word.content}
+                </span>
+              ))}
+            </div>
+
             <h1 className="text-white text-[96px] max-w-[550px] leading-[90%] -tracking-[3.84px] font-jost">
               Intecon Partnership Ltd
             </h1>
-            <p className="text-white capitalize text-[48px] -tracking-[1.72px] font-jost">
-              consulting Engineers
-            </p>
+            <div className="descs">
+              {descs.map((desc, index) => (
+                <span
+                  key={desc.id}
+                  style={{ display: index === currentDesc ? "block" : "none" }}
+                  className={`carousel-desc text-white capitalize text-[40px] -tracking-[1.72px] font-jost ${
+                    index === currentDesc ? "active" : ""
+                  }`}
+                >
+                  {desc.content}
+                </span>
+              ))}
+            </div>
             <span className="text-white text-[20px]">
               ISO 9001:2015 Certified | RC 311767
             </span>
@@ -244,7 +282,7 @@ function App() {
             </motion.a>
           </div>
           <motion.div
-            className=" slider absolute bottom-[120px] -right-[438px] scale-[1.2] h-full block z-1"
+            className=" slider absolute bottom-[120px] -right-[438px] scale-[1.2] w-full h-full block z-1"
             variants={fadeup}
             initial="hidden"
             whileInView="visible"

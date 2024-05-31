@@ -132,6 +132,25 @@ body {
   }
 }
 
+.project-btn-text{
+  animation:  skale 1.55s infinite ;
+  display: block;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+}
+
+@keyframes skale {
+  0% {
+    scale: 0.8;
+  }
+  50% {
+    scale: 1;
+  }
+  100% {
+    scale: 0.8;
+  }
+}
+
+
 .contact-text {
   animation: pulse-too 1.5s infinite;
   animation-timing-function: cubic-bezier(1, 0, 0, 1);
@@ -157,44 +176,50 @@ body {
 
 .project-btn {
   animation: pulse-3 1.5s infinite;
+  position: absolute;
+    bottom: 139px;
+    left: 50%;
+    translate: -50% 0;
 }
 
 @keyframes pulse-3 {
   0% {
-    scale: 0.8;
-    bottom: 139px;
-    left: 50%;
-    translate: -50% 0;
+    scale: 0.9;
+    
   }
   50% {
     scale: 1;
-    bottom: 139px;
-    left: 50%;
-    translate: -50% 0;
+    
   }
   100% {
-    scale: 0.8;
-    bottom: 139px;
-    left: 50%;
-    translate: -50% 0;
+    scale: 0.9;
+    
   }
 }
 
-.carousel-slide {
-  opacity: 0;
-  transition: opacity 1s ease-in-out; /* Smooth transition effect */
-}
 
 .slider .carousel-slide {
-  transition: filter 0.5s ease-in-out;
+  transition: filter 0.5s ease-in-out, opacity 1s ease-in-out;
+  opacity: 0;
   filter: grayscale(100%);
+  position: absolute;
+  top: 0;
+  right: 0;
+
+}
+
+.carousel-word,.carousel-desc{
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+
 }
 
 .slider:hover .carousel-slide {
   filter: grayscale(0);
 }
 
-.carousel-slide.active {
+.carousel-slide.active, .carousel-word.active, .carousel-desc.active {
   opacity: 1;
   /* z-index: 1; */
 }
+
