@@ -586,7 +586,7 @@ function App() {
               </span>
               <span className="client">
                 <img
-                  src="/images/unibadan-logo.png"
+                  src="/images/ui-logo.png"
                   alt="University of Ibadan logo"
                 />
               </span>

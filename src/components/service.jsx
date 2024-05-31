@@ -48,7 +48,7 @@ const Service = ({ head, text, img }) => {
         <p className="font-jost text-[24px] font-light pb-11 text-white max-w-[466px] text-justify">
           {text}
         </p>
-        <button className="text-[24px] block font-normal font-jost bg-darkblue py-6 px-[42px] -tracking-[0.96px] rounded text-white">
+        <button className="text-[24px] block font-normal font-jost bg-darkblue transition hover:bg-hoverblue py-6 px-[42px] -tracking-[0.96px] rounded text-white">
           Make Enquiries
         </button>
       </motion.div>
