@@ -6,6 +6,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+  /* -webkit-overflow-scrolling: ; */
 }
 
 body {
@@ -56,7 +58,6 @@ body {
   min-width: 231px;
   height: 231px;
   display: block;
-  /* flex: 0 0 auto; */
   margin-inline: 20px;
 }
 
@@ -71,4 +72,129 @@ body {
 
 .profile-image:hover img {
   filter: unset;
+}
+
+.arrow-down {
+  animation: bounce 2s infinite;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+}
+
+@keyframes bounce {
+  0% {
+    scale: 0.65;
+  }
+  50% {
+    scale: 1;
+  }
+  100% {
+    scale: 0.65;
+  }
+}
+
+.phone-box {
+  animation: bounce-too 1.5s infinite;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+  /* animation-delay: 1.25s; */
+}
+
+@keyframes bounce-too {
+  0% {
+    scale: 0.65;
+  }
+  50% {
+    scale: 1;
+  }
+  100% {
+    scale: 0.65;
+  }
+}
+
+.contact-btn {
+  animation: pulse 1.5s infinite;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+  transform-origin: left top;
+}
+
+@keyframes pulse {
+  0% {
+    scale: 0.95;
+    margin-right: 18%;
+    transform-origin: left top;
+  }
+  50% {
+    scale: 1;
+    transform-origin: left top;
+  }
+  100% {
+    scale: 0.95;
+    margin-right: 18%;
+    transform-origin: left top;
+  }
+}
+
+.contact-text {
+  animation: pulse-too 1.5s infinite;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+}
+
+@keyframes pulse-too {
+  0% {
+    scale: 0.8;
+    top: 10px;
+    left: -12px;
+  }
+  50% {
+    scale: 1;
+    top: 16px;
+    left: 16px;
+  }
+  100% {
+    scale: 0.8;
+    top: 10px;
+    left: -12px;
+  }
+}
+
+.project-btn {
+  animation: pulse-3 1.5s infinite;
+}
+
+@keyframes pulse-3 {
+  0% {
+    scale: 0.8;
+    bottom: 139px;
+    left: 50%;
+    translate: -50% 0;
+  }
+  50% {
+    scale: 1;
+    bottom: 139px;
+    left: 50%;
+    translate: -50% 0;
+  }
+  100% {
+    scale: 0.8;
+    bottom: 139px;
+    left: 50%;
+    translate: -50% 0;
+  }
+}
+
+.carousel-slide {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* Smooth transition effect */
+}
+
+.slider .carousel-slide {
+  transition: filter 0.5s ease-in-out;
+  filter: grayscale(100%);
+}
+
+.slider:hover .carousel-slide {
+  filter: grayscale(0);
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  z-index: 1;
 }

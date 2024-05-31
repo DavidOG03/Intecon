@@ -1,8 +1,138 @@
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Marquee from "react-fast-marquee";
+import { motion } from "framer-motion";
 import Service from "./components/service";
 
 function App() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = [
+    { id: 1, image: "/images/hero-image-1.png" },
+    { id: 2, image: "/images/hero-image-2.png" },
+    { id: 3, image: "/images/hero-image-3.png" },
+    // Add more slides here
+  ];
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+    }, 3000); // Change the interval time as needed
+
+    return () => clearInterval(intervalId);
+  }, []);
+
+  const fadein = {
+    hidden: {
+      x: -500,
+      opacity: 0.5,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "tween",
+        duration: 0.8,
+        delay: 0.2,
+      },
+    },
+  };
+
+  const fadeup = {
+    hidden: {
+      y: "500px",
+      opacity: 0.75,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "tween",
+        duration: 0.8,
+        delay: 0.2,
+      },
+    },
+  };
+
+  const fadedown = {
+    hidden: {
+      y: -300,
+      opacity: 0.25,
+      scale: 0.5,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "tween",
+        duration: 0.8,
+        delay: 0.2,
+      },
+    },
+  };
+
+  const stagger = {
+    hidden: {
+      opacity: 1,
+    },
+    visible: {
+      transition: {
+        staggerChildren: 1,
+        delayChildren: 1,
+      },
+    },
+  };
+
+  const fadeintoo = {
+    hidden: {
+      x: 500,
+      opacity: 0.75,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "tween",
+        duration: 0.8,
+        delay: 0.2,
+      },
+    },
+  };
+
+  const contact = {
+    hidden: {
+      x: 500,
+      opacity: 0.75,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "tween",
+        duration: 0.8,
+        delay: 0.2,
+      },
+    },
+  };
+
+  const scroll = {
+    hidden: {
+      y: "100px",
+      opacity: 0.5,
+      scale: 1.3,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "tween",
+        duration: 0.8,
+        delay: 0.2,
+      },
+    },
+  };
+
   return (
     <>
       <header className="relative">
@@ -12,27 +142,42 @@ function App() {
           </a>
           <ul className="navlinks flex justify-start items-center gap-6">
             <li className="uppercase ">
-              <a href="/" className="no-underline text-white text-[14px] font-inter hover:font-bold">
+              <a
+                href="/"
+                className="no-underline text-white text-[14px] font-inter hover:font-bold"
+              >
                 Home
               </a>
             </li>
             <li className="uppercase  ">
-              <a href="/" className="no-underline text-white text-[14px] font-inter hover:font-bold">
+              <a
+                href="/"
+                className="no-underline text-white text-[14px] font-inter hover:font-bold"
+              >
                 About
               </a>
             </li>
             <li className="uppercase  ">
-              <a href="/" className="no-underline text-white text-[14px] font-inter hover:font-bold">
+              <a
+                href="/"
+                className="no-underline text-white text-[14px] font-inter hover:font-bold"
+              >
                 Projects
               </a>
             </li>
             <li className="uppercase  ">
-              <a href="/" className="no-underline text-white text-[14px] font-inter hover:font-bold">
+              <a
+                href="/"
+                className="no-underline text-white text-[14px] font-inter hover:font-bold"
+              >
                 Services
               </a>
             </li>
             <li className="uppercase  ">
-              <a href="/" className="no-underline text-white text-[14px] font-inter hover:font-bold">
+              <a
+                href="/"
+                className="no-underline text-white text-[14px] font-inter hover:font-bold"
+              >
                 Contact
               </a>
             </li>
@@ -41,52 +186,85 @@ function App() {
       </header>
       <main className="w-full">
         <section className="hero pt-[255px] pl-[7%] relative h-[875px] overflow-hidden bg-blue">
-          <div className="hero-text mb-[88px]">
-            <span className="uppercase text-white font-normal text-[36px]">
+          <motion.div
+            className="hero-text mb-[88px]"
+            variants={fadein}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <span className="uppercase text-white font-inter font-normal text-[36px]">
               We are
             </span>
             <h1 className="text-white text-[96px] max-w-[550px] leading-[90%] -tracking-[3.84px] font-jost">
               Intecon Partnership Ltd
             </h1>
-            <p className="text-white capitalize text-[48px] -tracking-[4%]">
+            <p className="text-white capitalize text-[48px] -tracking-[1.72px] font-jost">
               consulting Engineers
             </p>
             <span className="text-white text-[20px]">
               ISO 9001:2015 Certified | RC 311767
             </span>
-          </div>
+          </motion.div>
           <div className="hug flex flex-row justify-between items-center z-10">
-            <button className="scroll-down relative w-[156px] h-[74px] border border-border rounded-[10px]">
-              <span className="absolute w-full top-4 left-4 -tracking-[4%] text-base text-white text-left leading-[90%]">
+            <motion.a
+              className="scroll-down relative w-[156px] h-[74px] border border-border rounded-[10px]"
+              variants={scroll}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              href="#about"
+            >
+              <span className="absolute w-full top-4 left-4 -tracking-[0.64px] text-base text-white text-left leading-[90%] font-jost">
                 Scroll Down
               </span>
               <img
                 src="/images/arrow-down.svg"
                 alt="arrow down"
-                className="absolute bottom-[10px] right-[10px] "
+                className="arrow-down absolute bottom-[10px] right-[10px] "
               />
-            </button>
-            <a
+            </motion.a>
+            <motion.a
+              variants={contact}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
               href="/contact"
-              className="contact text-white relative mr-[17.5%] w-[264px] h-[70px] block border border-border rounded-[10px] bg-darkblue z-10"
+              className="contact-btn text-white relative mr-[8.5%] w-[264px] h-[70px] block border-0 rounded-[10px] transition bg-darkblue hover:bg-hoverblue z-10"
             >
-              <span className="absolute w-full top-4 left-4 -tracking-[4%] text-base text-white text-left leading-[90%]">
+              <span className="contact-text absolute w-full top-4 left-4  text-base text-white text-left leading-[90%]leading-[90%] -tracking-[0.64px] font-jost">
                 Contact Us
               </span>
               <div className="phone-box absolute bottom-[10px] right-[10px] grid place-items-center bg-white rounded-full p-[5px]">
                 <img src="/images/phone.svg" alt="phone icon" />
               </div>
-            </a>
+            </motion.a>
           </div>
-
-          <img
-            src="/images/hero-image-1.png"
-            alt="construction image"
-            className="absolute -bottom-0 -right-[338px] h-full block z-1"
-          />
+          <motion.div
+            className=" slider absolute bottom-[120px] -right-[438px] scale-[1.2] h-full block z-1"
+            variants={fadeup}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {slides.map((slide, index) => (
+              <img
+                key={slide.id}
+                src={slide.image}
+                alt={`Slide ${slide.id}`}
+                // style={{ display: index === currentSlide ? 'block' : 'none' }}
+                className={`carousel-slide ${
+                  index === currentSlide ? "active" : ""
+                }`}
+              />
+            ))}
+          </motion.div>
         </section>
 
-        <section className="about  bg-white w-full h-full relative overflow-hidden pb-[96px]">
+        <section
+          className="about  bg-white w-full h-full relative overflow-hidden pb-[96px]"
+          id="about"
+        >
           <div className="background w-[50%] h-[893px] bg-plan bg-cover bg-left-top bg-no-repeat absolute top-0 left-1"></div>
           <div className="background w-[50%] h-[893px] bg-plan-2 bg-cover bg-left-top bg-no-repeat absolute top-[112px] right-0"></div>
 
@@ -94,43 +272,80 @@ function App() {
           <div className="ellipse w-[1073px] h-[751px] bg-white blur-[300px] absolute top-[75px] rounded-full z-0"></div>
 
           <div className="hug flex flex-row justify-center items-start gap-[5%] pt-[184px] w-full px-[16%] z-100 relative">
-            <div className="flex flex-col justify-between items-start gap-4">
+            <motion.div
+              variants={fadein}
+              initial={{ x: -200, opacity: 1 }}
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="flex flex-col justify-between items-start gap-4 relative z-50"
+            >
               <h2 className="text-[40px] font-semibold font-inter ">
                 Our Mission
               </h2>
               <div className="circle w-[102px] h-[98px] rounded-full shadow-inner p-4 grid place-items-center">
-                <img src="/images/arrow-right.png" alt="arrow pointing right" />
+                <div className="arrow-box w-[66px] h-[66px] rounded-full border border-border grid place-items-center">
+                  <img
+                    src="/images/arrow-right.svg"
+                    alt="arrow pointing right"
+                  />
+                </div>
               </div>
-            </div>
+            </motion.div>
 
-            <p className="text-[24px] max-w-[675px] font-jost font-light ">
+            <motion.p
+              className="text-[24px] max-w-[675px] font-jost font-light "
+              variants={fadein}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
               Our mission is to provide technically sound engineering services
               on projects, to achieve the production of durable facilities and
               time tested solutions, at optimum costs to clients, and in a
               timely and environmentally friendly manner, utilizing highly
               trained manpower, cutting- edge technology and equipment.
-            </p>
+            </motion.p>
           </div>
 
-          <div className="hug flex flex-row justify-between items-start gap-[74px] pt-[102px] px-[16%] relative">
-            <p className="text-[24px] max-w-[603px] font-jost font-light ">
+          <motion.div
+            className="hug flex flex-row justify-between items-start gap-[74px] pt-[102px] px-[16%] relative"
+            variants={fadeintoo}
+            initial={{ x: 200, opacity: 1, transitionDelay: 0.5 }}
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.p
+              className="text-[24px] max-w-[603px] font-jost font-light "
+              variants={fadeintoo}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
               Our vision is to be one of the best consulting engineering firms
               in Africa and beyond, in the delivery of world class engineering
               services.
-            </p>
+            </motion.p>
 
-            <div className="flex flex-col justify-center items-start gap-4">
+            <div className="flex flex-col justify-center items-end gap-4">
               <h2 className="text-[40px] font-semibold font-inter ">
                 Our Vision
               </h2>
               <div className="circle w-[102px] h-[98px] rounded-full shadow-inner p-4 grid place-items-center">
-                <img src="/images/arrow-left.png" alt="arrow pointing left" />
+                <div className="arrow-box w-[66px] h-[66px] rounded-full border border-border grid place-items-center">
+                  <img src="/images/arrow-left.svg" alt="arrow pointing left" />
+                </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           <div className="profile grid grid-cols-2 relative z-10 w-full bg-white py-[84px] px-[7%] gap-x-[5%]">
-            <div className="image-box flex flex-col justify-start items-center">
+            <motion.div
+              className="image-box flex flex-col justify-start items-center"
+              variants={fadein}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
               <div className="profile-image bg-border rounded-[10px] max-w-[505px]">
                 <img
                   src="/images/engr-ajibola.png"
@@ -145,8 +360,20 @@ function App() {
                 {" "}
                 Chairman
               </p>
-            </div>
-            <div className="profile-bio">
+            </motion.div>
+            <motion.div
+              className="profile-bio"
+              variants={fadeup}
+              initial="hidden"
+              whileInView={{
+                y: 0,
+                transition: {
+                  duration: 0.5,
+                  delay: 0,
+                },
+              }}
+              viewport={{ once: true }}
+            >
               <p className="text-[24px] font-jost font-light pb-6 ">
                 INTECON PARTNERSHIP was established in 1976 by highly qualified
                 Nigerian professional engineers with local and international
@@ -172,52 +399,94 @@ function App() {
                 relationships have led to collaborations on project which have
                 seen us maximizing professional inputs and capacity build-up.
               </p>
-            </div>
+            </motion.div>
           </div>
           <div className="blue-box w-[34px] h-[142px] bg-edgeblue absolute bottom-6 right-0 z-20"></div>
         </section>
 
-        <section className="projects relative pt-[184px] pb-[139px] px-[230px] overflow-hidden h-[2100px]">
+        <section className="projects relative z-100 pt-[184px] pb-[139px] px-[230px]  h-[2100px]">
           <div className="blue-box w-[34px] h-[142px] bg-edgeblue absolute top-[145px] left-0"></div>
           <h3 className="text-[40px] tracking-[14.8px] font-bold font-inter uppercase">
             Projects
           </h3>
-          <img
-            src="/images/ajayi-crowther-library.png"
-            alt="ajayi crowther library"
-            className="first-project absolute top-[145px] right-[16%]"
-          />
-          <img
-            src="/images/bowen-library.png"
-            alt="bowen library"
-            className="second-project absolute top-[470px] left-[16%]"
-          />
-          <img
-            src="/images/natural-science-building.png"
-            alt="Ajayi Crowther natural science building"
-            className="third-project absolute top-[818px] right-[17%]"
-          />
-          <img
-            src="/images/heritage-mall.png"
-            alt="Heritage Mall Dugbe, Ibadan, Oyo State Nigeria"
-            className="fourth-project absolute top-[818px] left-[16%]"
-          />
-          <img
-            src="/images/engr-survey.png"
-            alt="Engineering Survey"
-            className="fifth-project absolute top-[1377px] left-[16%]"
-          />
-          <img
-            src="/images/eket-control-tower.png"
-            alt="Eket Control Tower"
-            className="sixth-project absolute top-[1426px] right-[16%]"
-          />
-          <button className="text-[24px] block font-normal font-jost bg-darkblue py-6 px-[42px] -tracking-[0.96px] rounded text-white mx-auto mt-auto">
-            See More Projects
+          <motion.div
+            className="h-full w-full"
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            staggerchildren={0.3}
+          >
+            <motion.img
+              variants={fadedown}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              src="/images/ajayi-crowther-library.png"
+              alt="ajayi crowther library"
+              className="first-project absolute top-[145px] right-[16%]"
+            />
+            <motion.img
+              variants={fadedown}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              src="/images/bowen-library.png"
+              alt="bowen library"
+              className="second-project absolute top-[470px] left-[16%]"
+            />
+            <motion.img
+              variants={fadedown}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              src="/images/natural-science-building.png"
+              alt="Ajayi Crowther natural science building"
+              className="third-project absolute top-[818px] right-[17%]"
+            />
+            <motion.img
+              variants={fadedown}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              src="/images/heritage-mall.png"
+              alt="Heritage Mall Dugbe, Ibadan, Oyo State Nigeria"
+              className="fourth-project absolute top-[818px] left-[16%]"
+            />
+            <motion.img
+              variants={fadedown}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              src="/images/engr-survey.png"
+              alt="Engineering Survey"
+              className="fifth-project absolute top-[1377px] left-[16%]"
+            />
+            <motion.img
+              variants={fadedown}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              src="/images/eket-control-tower.png"
+              alt="Eket Control Tower"
+              className="sixth-project absolute top-[1426px] right-[16%]"
+            />
+          </motion.div>
+
+          <button className=" project-btn text-[24px] grid place-items-center font-normal font-jost transition bg-darkblue hover:bg-hoverblue py-6 px-[42px] -tracking-[0.96px] rounded text-white absolute bottom-[139px]] left-[50%] -translate-x-[50%]">
+            <span className="project-btn-text">See More Projects</span>
           </button>
 
-          <img src="/images/intecon-thick.png" alt="intecon logo" className="w-full h-full absolute -left-[784px] -bottom[365px] -z-[1]"/>
-          <img src="/images/intecon-thick.png" alt="intecon logo"  className="w-full h-full absolute -right-[498px] -bottom-[1093px] -z-[1]"/>
+          <motion.img
+            src="/images/intecon-thick.png"
+            alt="intecon logo"
+            className="w-full h-full absolute -left-[784px] -bottom[365px] -z-[1]"
+          />
+          <img
+            src="/images/intecon-thick.png"
+            alt="intecon logo"
+            className="w-full h-full absolute -right-[498px] -bottom-[1093px] -z-[1]"
+          />
         </section>
 
         <section className=" services relative pt-[140px] pb-[177px] px-[11%] bg-edgeblue overflow-hidden">
@@ -253,23 +522,17 @@ function App() {
           </h3>
           <div className="marquee-container relative -z-[1] pt-[88px] pb-[124px]">
             <Marquee speed={250}>
-            <span className="client">
+              <span className="client">
                 <img
                   src="/images/coat-of-arms.png"
                   alt="Nigerian coat of arms no background"
                 />
               </span>
               <span className="client">
-                <img
-                  src="/images/exxon.png"
-                  alt="ExxonMobil logo png"
-                />
+                <img src="/images/exxon.png" alt="ExxonMobil logo png" />
               </span>
               <span className="client">
-                <img
-                  src="/images/p-and-g.png"
-                  alt="Procter and gamble logo "
-                />
+                <img src="/images/p-and-g.png" alt="Procter and gamble logo " />
               </span>
               <span className="client">
                 <img
@@ -290,10 +553,7 @@ function App() {
                 />
               </span>
               <span className="client">
-                <img
-                  src="/images/updc.png"
-                  alt="updc logo"
-                />
+                <img src="/images/updc.png" alt="updc logo" />
               </span>
               <span className="client">
                 <img
@@ -302,16 +562,10 @@ function App() {
                 />
               </span>
               <span className="client">
-                <img
-                  src="/images/faan.png"
-                  alt="FAAN Logo"
-                />
+                <img src="/images/faan.png" alt="FAAN Logo" />
               </span>
               <span className="client">
-                <img
-                  src="/images/unilever.png"
-                  alt="Unilever Logo"
-                />
+                <img src="/images/unilever.png" alt="Unilever Logo" />
               </span>
             </Marquee>
           </div>
@@ -361,7 +615,7 @@ function App() {
             </div>
             <button
               type="submit"
-              className="text-[24px] block mx-auto font-normal font-jost bg-darkblue py-6 px-[42px] -tracking-[0.96px] rounded text-white mt-8"
+              className="text-[24px] block mx-auto font-normal font-jost transition bg-darkblue hover:bg-hoverblue py-6 px-[42px] -tracking-[0.96px] rounded text-white mt-8"
             >
               Send Message
             </button>

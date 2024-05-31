@@ -14,6 +14,7 @@ export default {
         "blue":"#00BFEC",
         "white": "#FFFFFF",
         "darkblue": "#546CFF",
+        "hoverblue":"#3645A3",
         "edgeblue": "#0099BD",
         "border": "#D9D9D9",
         "contact": "#D8DFE5",
