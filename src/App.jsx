@@ -512,7 +512,7 @@ function App() {
                 alt="Ajayi Crowther natural science building"
                 className="third-project "
               />
-              <p className="text-[24px] font-jost font-medium pt-[30px]">Ajayi Crowther Natural Science Building</p>
+              <p className="text-[24px] font-jost font-medium pt-[30px] max-w-[266px] text-left">Ajayi Crowther Natural Science Building</p>
             </motion.div>
             <motion.div
               className="project-image absolute top-[918px] left-[16%]"
