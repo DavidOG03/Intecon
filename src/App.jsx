@@ -3,9 +3,9 @@ import "./App.css";
 import Marquee from "react-fast-marquee";
 import { motion } from "framer-motion";
 import Service from "./components/service";
-import firstImage from "/images/hero-image-1.png";
-import secondImage from "/images/hero-image-2.png";
-import thirdImage from "/images/hero-image-3.png";
+import firstImage from "/images/hero-image-1.webp";
+import secondImage from "/images/hero-image-2.webp";
+import thirdImage from "/images/hero-image-3.webp";
 
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -281,6 +281,7 @@ function App() {
               </div>
             </motion.a>
           </div>
+
           <motion.div
             className=" slider absolute bottom-[120px] -right-[438px] scale-[1.2] w-full h-full block z-1"
             variants={fadeup}
@@ -389,7 +390,7 @@ function App() {
             >
               <div className="profile-image bg-border rounded-[10px] max-w-[505px]">
                 <img
-                  src="/images/engr-ajibola.png"
+                  src="/images/engr-ajibola.webp"
                   alt="Intecon Engineer Ajibola's Profile Picture"
                 />
               </div>
@@ -463,7 +464,7 @@ function App() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              src="/images/ajayi-crowther-library.png"
+              src="/images/ajayi-crowther-library.webp"
               alt="ajayi crowther library"
               className="first-project absolute top-[145px] right-[16%]"
             />
@@ -472,7 +473,7 @@ function App() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              src="/images/bowen-library.png"
+              src="/images/bowen-library.webp"
               alt="bowen library"
               className="second-project absolute top-[470px] left-[16%]"
             />
@@ -481,7 +482,7 @@ function App() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              src="/images/natural-science-building.png"
+              src="/images/natural-science-building.webp"
               alt="Ajayi Crowther natural science building"
               className="third-project absolute top-[818px] right-[17%]"
             />
@@ -490,7 +491,7 @@ function App() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              src="/images/heritage-mall.png"
+              src="/images/heritage-mall.webp"
               alt="Heritage Mall Dugbe, Ibadan, Oyo State Nigeria"
               className="fourth-project absolute top-[818px] left-[16%]"
             />
@@ -499,7 +500,7 @@ function App() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              src="/images/engr-survey.png"
+              src="/images/engr-survey.webp"
               alt="Engineering Survey"
               className="fifth-project absolute top-[1377px] left-[16%]"
             />
@@ -508,7 +509,7 @@ function App() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              src="/images/eket-control-tower.png"
+              src="/images/eket-control-tower.webp"
               alt="Eket Control Tower"
               className="sixth-project absolute top-[1426px] right-[16%]"
             />
@@ -530,31 +531,33 @@ function App() {
           />
         </section>
 
-        <section className=" services relative pt-[140px] pb-[177px] px-[11%] bg-edgeblue overflow-hidden">
+        <section className=" services relative pt-[140px] pb-[278px] px-[11%] bg-edgeblue overflow-hidden">
           <h3 className="text-[40px] absolute top-[140px] left-[164px] tracking-[14.8px] font-bold font-inter uppercase text-white">
             Services
           </h3>
-          <Service
-            head="Highway"
-            text="Intecon specializes in designing and constructing robust structures that withstand the test of time, from towering skyscrapers to intricate bridges, blending innovation with structural integrity."
-            img="/images/highway.png"
-          />
-          <Service
-            head="Structure"
-            text="Intecon specializes in designing and constructing robust structures that withstand the test of time, from towering skyscrapers to intricate bridges, blending innovation with structural integrity."
-            img="/images/structure.png"
-          />
-          <Service
-            head="Geotechnic"
-            text="Intecon's geotechnical expertise lies in understanding the Earth's complexities to ensure stable and sustainable construction, offering comprehensive solutions for soil mechanics, foundation design, and ground improvement."
-            img="/images/geotechnic.png"
-          />
-          <Service
-            head="Non-destructive 
+          <div className="services-box w-full h-full p-0 flex flex-col gap-[101px]">
+            <Service
+              head="Highway"
+              text="Intecon specializes in designing and constructing robust structures that withstand the test of time, from towering skyscrapers to intricate bridges, blending innovation with structural integrity."
+              img="/images/highway.webp"
+            />
+            <Service
+              head="Structure"
+              text="Intecon specializes in designing and constructing robust structures that withstand the test of time, from towering skyscrapers to intricate bridges, blending innovation with structural integrity."
+              img="/images/structure.png"
+            />
+            <Service
+              head="Geotechnic"
+              text="Intecon's geotechnical expertise lies in understanding the Earth's complexities to ensure stable and sustainable construction, offering comprehensive solutions for soil mechanics, foundation design, and ground improvement."
+              img="/images/geotechnic.webp"
+            />
+            <Service
+              head="Non-destructive 
           testing"
-            text="With advanced non-destructive testing techniques, Intecon ensures the structural integrity and safety of infrastructure without causing damage, employing cutting-edge methods to assess material properties and detect flaws."
-            img="/images/testing.png"
-          />
+              text="With advanced non-destructive testing techniques, Intecon ensures the structural integrity and safety of infrastructure without causing damage, employing cutting-edge methods to assess material properties and detect flaws."
+              img="/images/testing.webp"
+            />
+          </div>
         </section>
 
         <section className="clients py-[69px]">
@@ -598,7 +601,7 @@ function App() {
               </span>
               <span className="client">
                 <img
-                  src="/images/ajayi-crowther-logo.png"
+                  src="/images/ajayi-crowther-logo.webp"
                   alt="Ajayi Crowther University Logo"
                 />
               </span>

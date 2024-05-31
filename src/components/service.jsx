@@ -34,7 +34,7 @@ const Service = ({ head, text, img }) => {
     },
   };
   return (
-    <div className="service grid grid-cols-2 gap-x-[50x] mb-[101px] h-[556px]">
+    <div className="service grid grid-cols-2 gap-x-[50px] h-[556px]">
       <motion.div
         className="text"
         variants={fadein}
@@ -42,7 +42,7 @@ const Service = ({ head, text, img }) => {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <h4 className=" text-[48px] font-semibold text-white pt-[196px] pb-[29px] max-w-[399px]">
+        <h4 className=" text-[48px] font-semibold text-white pt-[196px] pb-[29px] max-w-[399px] leading-[50px]">
           {head}
         </h4>
         <p className="font-jost text-[24px] font-light pb-11 text-white max-w-[466px] text-justify">

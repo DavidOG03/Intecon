@@ -132,8 +132,8 @@ body {
   }
 }
 
-.project-btn-text{
-  animation:  skale 1.55s infinite ;
+.project-btn-text {
+  animation: skale 1.5s infinite;
   display: block;
   animation-timing-function: cubic-bezier(1, 0, 0, 1);
 }
@@ -149,7 +149,6 @@ body {
     scale: 0.8;
   }
 }
-
 
 .contact-text {
   animation: pulse-too 1.5s infinite;
@@ -176,27 +175,20 @@ body {
 
 .project-btn {
   animation: pulse-3 1.5s infinite;
-  position: absolute;
-    bottom: 139px;
-    left: 50%;
-    translate: -50% 0;
+  bottom: 139px;
 }
 
 @keyframes pulse-3 {
   0% {
     scale: 0.9;
-    
   }
   50% {
     scale: 1;
-    
   }
   100% {
     scale: 0.9;
-    
   }
 }
-
 
 .slider .carousel-slide {
   transition: filter 0.5s ease-in-out, opacity 1s ease-in-out;
@@ -205,21 +197,23 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-
 }
 
-.carousel-word,.carousel-desc{
+.slider .carousel-word,
+.slider .carousel-desc {
   opacity: 0;
-  transition: opacity 1s ease-in-out;
-
+  visibility: hidden;
+  transition: visibility 1s ease-in-out, opacity 1s ease-in-out;
 }
 
 .slider:hover .carousel-slide {
   filter: grayscale(0);
 }
 
-.carousel-slide.active, .carousel-word.active, .carousel-desc.active {
+.slider .carousel-slide.active,
+.slider .carousel-word.active,
+.slider .carousel-desc.active {
   opacity: 1;
+  visibility: visible;
   /* z-index: 1; */
 }
-
