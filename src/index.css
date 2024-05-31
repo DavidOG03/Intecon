@@ -182,7 +182,7 @@ body {
 
 .carousel-slide {
   opacity: 0;
-  transition: opacity 0.5s ease-in-out; /* Smooth transition effect */
+  transition: opacity 1s ease-in-out; /* Smooth transition effect */
 }
 
 .slider .carousel-slide {
@@ -196,5 +196,5 @@ body {
 
 .carousel-slide.active {
   opacity: 1;
-  z-index: 1;
+  /* z-index: 1; */
 }

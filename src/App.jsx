@@ -3,13 +3,16 @@ import "./App.css";
 import Marquee from "react-fast-marquee";
 import { motion } from "framer-motion";
 import Service from "./components/service";
+import firstImage from '/images/hero-image-1.png'
+import secondImage from '/images/hero-image-2.png'
+import thirdImage from '/images/hero-image-3.png'
 
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [
-    { id: 1, image: "/images/hero-image-1.png" },
-    { id: 2, image: "/images/hero-image-2.png" },
-    { id: 3, image: "/images/hero-image-3.png" },
+    { id: 1, image: firstImage },
+    { id: 2, image: secondImage },
+    { id: 3, image: thirdImage},
     // Add more slides here
   ];
 
