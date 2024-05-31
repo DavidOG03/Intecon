@@ -329,6 +329,7 @@ function App() {
                   <img
                     src="/images/arrow-right.svg"
                     alt="arrow pointing right"
+                    className="right-arrow"
                   />
                 </div>
               </div>
@@ -374,7 +375,7 @@ function App() {
               </h2>
               <div className="circle w-[102px] h-[98px] rounded-full shadow-inner p-4 grid place-items-center">
                 <div className="arrow-box w-[66px] h-[66px] rounded-full border border-border grid place-items-center">
-                  <img src="/images/arrow-left.svg" alt="arrow pointing left" />
+                  <img src="/images/arrow-left.svg" alt="arrow pointing left" className="left-arrow"/>
                 </div>
               </div>
             </div>

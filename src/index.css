@@ -217,3 +217,51 @@ body {
   visibility: visible;
   /* z-index: 1; */
 }
+
+.arrow-box{
+  overflow: hidden;
+}
+
+.right-arrow{
+  animation: direct 1.5s infinite;
+}
+
+@keyframes direct {
+  0%{
+    translate: 0 0;
+  }
+ 50%{
+  translate: calc(100% + 50px);
+ }
+ 60%{
+  translate: 0 -100px;
+ }
+ 70%{
+  translate: -100px 0;
+ }
+  100%{
+    translate: 0 0;
+  }
+}
+
+.left-arrow{
+  animation: direct 1.5s infinite;
+}
+
+@keyframes direct {
+  0%{
+    translate: 0 0;
+  }
+ 50%{
+  translate: -100px;
+ }
+ 60%{
+  translate: 0 -100px;
+ }
+ 70%{
+  translate: 100px 0;
+ }
+  100%{
+    translate: 0 0;
+  }
+}
