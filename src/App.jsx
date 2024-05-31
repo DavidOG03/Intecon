@@ -277,7 +277,7 @@ function App() {
                 Contact Us
               </span>
               <div className="phone-box absolute bottom-[10px] right-[10px] grid place-items-center bg-white rounded-full p-[5px]">
-                <img src="/images/phone.svg" alt="phone icon" />
+                <img src="/images/contact.svg" alt="phone icon" />
               </div>
             </motion.a>
           </div>
