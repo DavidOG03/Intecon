@@ -245,10 +245,10 @@ body {
 }
 
 .left-arrow{
-  animation: direct 1.5s infinite;
+  animation: directtoo 1.5s infinite;
 }
 
-@keyframes direct {
+@keyframes directtoo {
   0%{
     translate: 0 0;
   }
