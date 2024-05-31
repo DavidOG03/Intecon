@@ -375,7 +375,11 @@ function App() {
               </h2>
               <div className="circle w-[102px] h-[98px] rounded-full shadow-inner p-4 grid place-items-center">
                 <div className="arrow-box w-[66px] h-[66px] rounded-full border border-border grid place-items-center">
-                  <img src="/images/arrow-left.svg" alt="arrow pointing left" className="left-arrow"/>
+                  <img
+                    src="/images/arrow-left.svg"
+                    alt="arrow pointing left"
+                    className="left-arrow"
+                  />
                 </div>
               </div>
             </div>
@@ -447,7 +451,7 @@ function App() {
           <div className="blue-box w-[34px] h-[142px] bg-edgeblue absolute bottom-6 right-0 z-20"></div>
         </section>
 
-        <section className="projects relative z-100 pt-[184px] pb-[139px] px-[230px]  h-[2100px]">
+        <section className="projects relative z-100 pt-[184px] pb-[139px] px-[230px]  h-[2300px]">
           <div className="blue-box w-[34px] h-[142px] bg-edgeblue absolute top-[145px] left-0"></div>
           <h3 className="text-[40px] tracking-[14.8px] font-bold font-inter uppercase">
             Projects
@@ -460,60 +464,110 @@ function App() {
             viewport={{ once: true }}
             staggerchildren={0.3}
           >
-            <motion.img
+            <motion.div
+              className="project-image absolute top-[145px] right-[16%]"
               variants={fadedown}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              src="/images/ajayi-crowther-library.webp"
-              alt="ajayi crowther library"
-              className="first-project absolute top-[145px] right-[16%]"
-            />
-            <motion.img
+            >
+              <img
+                src="/images/ajayi-crowther-library.webp"
+                alt="ajayi crowther library"
+                className="first-project "
+              />
+              <p className="text-[24px] font-jost font-medium pt-[30px]">Ajayi Crowther Library</p>
+            </motion.div>
+            <motion.div
+              className="project-image absolute top-[470px] left-[16%]"
               variants={fadedown}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              src="/images/bowen-library.webp"
-              alt="bowen library"
-              className="second-project absolute top-[470px] left-[16%]"
-            />
-            <motion.img
+            >
+              <img
+                variants={fadedown}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                src="/images/bowen-library.webp"
+                alt="bowen library"
+                className="second-project "
+              />
+              <p className="text-[24px] font-jost font-medium pt-[30px]">Bowen Library</p>
+            </motion.div>
+            <motion.div
+              className="project-image absolute top-[918px] right-[17%]"
               variants={fadedown}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              src="/images/natural-science-building.webp"
-              alt="Ajayi Crowther natural science building"
-              className="third-project absolute top-[818px] right-[17%]"
-            />
-            <motion.img
+            >
+              <img
+                variants={fadedown}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                src="/images/natural-science-building.webp"
+                alt="Ajayi Crowther natural science building"
+                className="third-project "
+              />
+              <p className="text-[24px] font-jost font-medium pt-[30px]">Ajayi Crowther Natural Science Building</p>
+            </motion.div>
+            <motion.div
+              className="project-image absolute top-[918px] left-[16%]"
               variants={fadedown}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              src="/images/heritage-mall.webp"
-              alt="Heritage Mall Dugbe, Ibadan, Oyo State Nigeria"
-              className="fourth-project absolute top-[818px] left-[16%]"
-            />
-            <motion.img
+            >
+              <img
+                variants={fadedown}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                src="/images/heritage-mall.webp"
+                alt="Heritage Mall Dugbe, Ibadan, Oyo State Nigeria"
+                className="fourth-project "
+              />
+              <p className="text-[24px] font-jost font-medium pt-[30px]">Heritage Mall</p>
+            </motion.div>
+            <motion.div
+              className="project-image absolute top-[1477px] left-[16%]"
               variants={fadedown}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              src="/images/engr-survey.webp"
-              alt="Engineering Survey"
-              className="fifth-project absolute top-[1377px] left-[16%]"
-            />
-            <motion.img
+            >
+              <img
+                variants={fadedown}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                src="/images/engr-survey.webp"
+                alt="Engineering Survey"
+                className="fifth-project "
+              />
+              <p className="text-[24px] font-jost font-medium pt-[30px]">Engineering Survey</p>
+            </motion.div>
+            <motion.div
+              className="project-image absolute top-[1526px] right-[16%]"
               variants={fadedown}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              src="/images/eket-control-tower.webp"
-              alt="Eket Control Tower"
-              className="sixth-project absolute top-[1426px] right-[16%]"
-            />
+            >
+              <img
+                variants={fadedown}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                src="/images/eket-control-tower.webp"
+                alt="Eket Control Tower"
+                className="sixth-project "
+              />
+              <p className="text-[24px] font-jost font-medium pt-[30px]">Eket Control Tower</p>
+            </motion.div>
           </motion.div>
 
           <button className=" project-btn text-[24px] grid place-items-center font-normal font-jost transition bg-darkblue hover:bg-hoverblue py-6 px-[42px] -tracking-[0.96px] rounded text-white absolute bottom-[139px]] left-[50%] -translate-x-[50%]">
