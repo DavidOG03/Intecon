@@ -213,12 +213,12 @@ function App() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <div className="words max-w-[599px] overflow-hidden">
+            <div className="words w-auto max-w-[599px] relative overflow-hidden h-[40px]">
               {words.map((word, index) => (
                 <span
                   key={word.id}
-                  style={{ display: index === currentWord ? "block" : "none" }}
-                  className={`carousel-word uppercase text-white font-inter font-normal text-[36px] ${
+                  style={{ visibility: index === currentWord ? "visible" : "hidden" }}
+                  className={`carousel-word uppercase text-white font-inter font-normal text-[36px] absolute top-0 left-0 ${
                     index === currentWord ? "active" : ""
                   }`}
                 >
@@ -230,12 +230,12 @@ function App() {
             <h1 className="text-white text-[96px] max-w-[550px] leading-[90%] -tracking-[3.84px] font-jost">
               Intecon Partnership Ltd
             </h1>
-            <div className="descs">
+            <div className="descs relative w-full max-w-[650px] h-[42px] mb-4">
               {descs.map((desc, index) => (
                 <span
                   key={desc.id}
-                  style={{ display: index === currentDesc ? "block" : "none" }}
-                  className={`carousel-desc text-white capitalize text-[40px] -tracking-[1.72px] font-jost ${
+                  style={{ visibility: index === currentDesc ? "visible" : "hidden" }}
+                  className={`carousel-desc text-white capitalize text-[40px] -tracking-[1.72px] font-jost absolute top-0 left-0 ${
                     index === currentDesc ? "active" : ""
                   }`}
                 >
